@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    
+	div.contenedor2
+	div.contenedor
+		h1
+			a(href="/")=titulo
+		div.myButton
+			a(href="tienda") Tienda
+		div.myButton
+			a(href="agregar") Agregar
+		div
+			- for(var i = 0; i < librerias.length; ++i){
+
+				div.item
+					h2 #{librerias[i].nombre}
+					br
+					small Precio: #{librerias[i].precio} colones.
+					div.myButton
+						a(href="compra?id=#{librerias[i]._id}") Comprar
+			-}

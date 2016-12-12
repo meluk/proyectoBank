@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    
+	div.contenedor2
+	div.contenedor
+		h1
+			a(href="/") Agregar
+		div.myButton
+			a(href="tienda") Tienda
+		form.agregar(name="agregarItem", action="/newFile", method="post")
+				label Cedula
+				input(type="numer", name="cedula")
+
+				label Tipo de Caja
+				input(type="text", name="tipoVentanilla")
+
+				button.myButton(type="submit", value="Guardar") Gardar

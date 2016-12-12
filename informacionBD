@@ -1,0 +1,38 @@
+Base de Datos:
+
+NombreDB: bancoApp
+Collection: libreriaCollection
+
+collection  customers:
+
+-----Ejemplo de los datos-----
+{
+    "cedula" : "345743",
+    "tipoVentanilla" : "Especial",
+    "ficha" : "D6",
+    "HoraInicio" : ISODate("2016-12-12T03:57:57.606Z"),
+    "HoraAtecion" : null,
+    "HoraFinal" : null,
+    "tiempoVentanilla" : null,
+    "__v" : 0
+}
+
+collection  cashier:
+
+-----Ejemplo de los datos-----
+{
+    "usuario" : "caja1",
+    "contraseña" : "c123",
+    "tipoVentanilla" : "cajas"
+}
+
+collection  fileList:
+
+
+-----Rutas-----
+customers/
+   muetra todas los clientes
+newFile/
+    crea un nuevo cliente con su ficha
+cashiers/
+    formulario para logerase

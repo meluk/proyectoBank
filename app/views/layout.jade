@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+  
+  body
+    div.contenedor2
+    div.contenedor
+      button.myButton
+          a(href="tienda") Tienda
+      button.myButton
+          a(href="newFile") Agregar
+      button.myButton
+          a(href="customers") Cliente
+      button.myButton
+          a(href="cashiers") Cajeros
+
+    block content

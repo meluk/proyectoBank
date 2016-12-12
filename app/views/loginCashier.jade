@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	.container
+		form.form-signin(name="loginCashier", action="/loginCashier", method="get")
+			h2.form-signin-heading Ingrese su datos porfavor
+			label.sr-only(for='inputEmail') Usuario
+			input#inputEmail.form-control(type='email', name="usuario", placeholder='Usuario', required='', autofocus='')
+			label.sr-only(for='inputPassword') Contraseña
+			input#inputPassword.form-control(type='password', name="password", placeholder='Password', required='')
+			
+			button.myButton(type="submit", value="Guardar") Ingresar

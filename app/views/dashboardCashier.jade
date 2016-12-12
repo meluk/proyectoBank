@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+		div
+		- for(var i = 0; i < cashiers.length; ++i){
+
+			div.item
+				h2 #{cashiers[i].usuario}
+				br
+				small Pr: #{cashiers[i].tipoVentanilla}
+				div.myButton
+					a(href="compra?id=#{cashiers[i]._id}") Comprar
+		-}
