@@ -13,6 +13,21 @@ block content
 				input(type="numer", name="cedula")
 
 				label Tipo de Caja
-				input(type="text", name="tipoVentanilla")
+
+				label.radio-inline
+					input(type='radio', class='radioSpans', id='confidence1', value='cajas', name='tipoVentanilla')
+				span cajas
+				label.radio-inline
+					input(type='radio', class='radioSpans', id='confidence1', value='plataforma', name='tipoVentanilla')
+				span plataforma
+				label.radio-inline
+					input(type='radio', class='radioSpans', id='confidence1', value='credito', name='tipoVentanilla')
+				span Crédito
+				label.radio-inline
+					input(type='radio', class='radioSpans', id='confidence1', value='marchamo', name='tipoVentanilla')
+				span Marchamo
+				label.radio-inline
+					input(type='radio', class='radioSpans', id='confidence1', value='preferenciales', name='tipoVentanilla')
+				span preferenciales
 
 				button.myButton(type="submit", value="Guardar") Gardar

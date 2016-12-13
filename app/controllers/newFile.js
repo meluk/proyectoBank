@@ -34,8 +34,14 @@ router.post('/newFile', function(req, res)
 			    case 'cajas':
 			        fileCreated = 'C'+ (total+1);
 			        break;
+			    case 'plataforma':
+			        fileCreated = 'P'+ (total+1);
+			        break;
 			    case 'credito':
 			        fileCreated = 'R'+ (total+1);
+			        break;
+			    case 'marchamo':
+			        fileCreated = 'M'+ (total+1);
 			        break;
 			    default:
 			        fileCreated = 'D'+ (total+1);
@@ -82,7 +88,7 @@ router.get('/seeFile', function(req, res, next)
 	{
 		if (err) return next(err);
 		//console.log(customers);
-		res.render('seeFile', {	//Hay un view que se llama Tienda
+		res.render('seeFile', {	//nombre de la vista
 			File: fileCreated,
 			customers: customers
 		});
