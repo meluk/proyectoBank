@@ -5,6 +5,7 @@ var customers = new Schema({
 	cedula : String,
     tipoVentanilla : String,
     ficha : String,
+    fecha : String,
     HoraInicio : Date,
     HoraAtecion : String,
     HoraFinal : String,

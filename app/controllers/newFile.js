@@ -22,14 +22,15 @@ router.get('/newFile', function(req, res)
 
 router.post('/newFile', function(req, res)
 {
-	var HoraInicio = new Date();
+	var time = new Date(),
+	    date = time.toISOString().slice(0,10);
 
-	customers.find({ 'tipoVentanilla': req.body.tipoVentanilla },function(err, resVentanillas)
+	customers.find({ 'tipoVentanilla': req.body.tipoVentanilla, 'fecha' : date},function(err, resVentanillas)
 		{
-			var d = new Date();
-			//console.log(resVentanillas.length);
+			
+			//console.log(date);
 			total = resVentanillas.length;
-			//console.log(total);
+			console.log(total);
 			switch(req.body.tipoVentanilla) {
 			    case 'cajas':
 			        fileCreated = 'C'+ (total+1);
@@ -47,14 +48,12 @@ router.post('/newFile', function(req, res)
 			        fileCreated = 'D'+ (total+1);
 			}
 
-			//ficha = 'C'+ total;
-		    console.log(HoraInicio);
-
 		    var nuevoRegistro = new customers({
 			cedula : req.body.cedula,
 		    tipoVentanilla : req.body.tipoVentanilla,
 		    ficha : fileCreated,
-		    HoraInicio : HoraInicio,
+		    fecha : date,
+		    HoraInicio : time,
 		    HoraAtecion : null,
 		    HoraFinal : null,
 		    tiempoVentanilla : null
@@ -62,7 +61,7 @@ router.post('/newFile', function(req, res)
 
 			nuevoRegistro.save();
 
-			console.log(nuevoRegistro._id);
+			//console.log(nuevoRegistro._id);
            
             //Resfresco la vista
 			res.render('customers'),{
