@@ -4,11 +4,12 @@ var mongoose = require('mongoose'),
 var customers = new Schema({
 	cedula : String,
     tipoVentanilla : String,
+    estado: String,
     ficha : String,
     fecha : String,
     HoraInicio : Date,
-    HoraAtecion : String,
-    HoraFinal : String,
+    HoraAtecion : Date,
+    HoraFinal : Date,
     tiempoVentanilla : String
 }, {collection: 'customers'}); //collection: nombre de la tabla en robomongo.
 

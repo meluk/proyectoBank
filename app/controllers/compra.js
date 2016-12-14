@@ -1,7 +1,7 @@
 var express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	librerias = mongoose.model('librerias');
+	customers = mongoose.model('customers');
 
 //para nodemailer
 var nodemailer = require('nodemailer');
@@ -36,19 +36,23 @@ module.exports = function(app)
 
 router.get('/compra', function(peticion, respuesta)
 {
-	librerias.find({ '_id': peticion.query.id }, function(err, librerias)	//Busca el modelo dentro del MVC
+	customers.find({ '_id': peticion.query.id }, function(err, user)	//Busca el modelo dentro del MVC
 	{
-		if (err) return next(err);
 		var mensaje;
-		for (var i = librerias.length - 1; i >= 0; i--) {
-			mensaje = librerias[i].nombre;
+
+		if (err) return next(err);
+		console.log()
+		
+		for (var i = user.length - 1; i >= 0; i--) {
+			console.log(mensaje)
+			mensaje = user[i].ficha;
 		};
-		enviarCorreo(mensaje);
-		//console.log(librerias);
+		//enviarCorreo(mensaje);
+		;
 		respuesta.render('compra', {	//vista
 			titulo: 'Gracias Por Comprar',
 			idProducto: peticion.query.id,
-			librerias: librerias
+			customers: customers
 		});
 	});
 

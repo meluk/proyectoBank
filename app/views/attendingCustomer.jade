@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    
+	div
+		h2 #{customer.ficha}
+		div.myButton
+					a(href="finish?id=#{customer._id}") Tomar Otra Ficha

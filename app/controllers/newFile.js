@@ -51,6 +51,7 @@ router.post('/newFile', function(req, res)
 		    var nuevoRegistro = new customers({
 			cedula : req.body.cedula,
 		    tipoVentanilla : req.body.tipoVentanilla,
+		    estado: "esperando",
 		    ficha : fileCreated,
 		    fecha : date,
 		    HoraInicio : time,
