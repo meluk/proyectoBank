@@ -1,19 +1,47 @@
 body {
-  font: 12px "}Helvetica", "Arial", sans-serif;
+  font: 12px "Helvetica", "Arial", sans-serif;
   background-color: #ffffff;
   margin: 0px
 }
-
 a {
   color: white;
   font-style: normal;
   text-decoration: none;
+}
+h1{
+	font-size: 30px;
+	font-style: normal;
+}
+.home{
+	background-color: #efefef;
+	padding-bottom: 300px
 }
 .contenedor
 {
 	background-color: #613AB7;
 	margin: 0px;
 	padding: 10px 35px;
+}
+.home .row{
+	width: 50%;
+	margin-top:  60px;
+}
+.home a{
+	width: 230px;
+	color: #212121;
+	cursor:pointer;
+	margin: 60px 45px 30px;
+}
+.home a p{
+	color: #fbb028;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}
+.home a img:hover{
+	border: 5px solid;
+	border-radius: 60%;
+	border-color: #fbb028;
 }
 .contenedor2
 {
@@ -56,4 +84,15 @@ a {
 }
 .agregar input{
 	margin-left: 10px;
+}
+.logoIndex{
+	width: 280px;
+}
+.center{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-center{
+	text-align: center;
 }

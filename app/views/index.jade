@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.home
+      img(src="img/logo.png").center.logoIndex
+      h1.text-center Bienvenido
+      div.row.center
+         a(href="/cashiers")
+            img(src="img/cashier-1.png", style="width:230px")
+         a(href="/newFile")
+            img(src="img/customer-1.png", style="width:230px")
