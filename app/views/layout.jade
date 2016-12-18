@@ -3,6 +3,8 @@ html(lang='en')
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/font-awesome.min')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
   
@@ -12,10 +14,16 @@ html(lang='en')
       button.myButton
           a(href="tienda") Tienda
       button.myButton
-          a(href="newFile") Agregar
+          a(href="newTicket") Agregar
       button.myButton
           a(href="customers") Todos los Cliente
       button.myButton
           a(href="cashiers") Cajeros
+      button.myButton
+          a(href="takeTicket") Lista de fichas Antendiendo
+      button.myButton
+          a(href="report") reporte
+      button.myButton
+          a(href="report2") reporte2
 
     block content

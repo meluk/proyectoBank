@@ -10,7 +10,7 @@ var customers = new Schema({
     HoraInicio : Date,
     HoraAtecion : Date,
     HoraFinal : Date,
-    tiempoVentanilla : String
+    tiempoVentanilla : { type: Number}
 }, {collection: 'customers'}); //collection: nombre de la tabla en robomongo.
 
 mongoose.model('customers', customers); //Exporta la coleccion para poder ser utilizada

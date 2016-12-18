@@ -1,23 +1,36 @@
 var express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	cashiers = mongoose.model('cashiers');	//Invoca el modelo definido en el MVC Models
+	cashiers = mongoose.model('cashiers'),
+	customers = mongoose.model('customers');	//Invoca el modelo definido en el MVC Models
 
 module.exports = function(app) {
 	app.use('/', router);
 };
 
-router.get('/cashiers', function(req, res, next)
+router.get('/cashiers', function(req, res)
 {
+	res.render('loginCashier');
+});
 
-	cashiers.find({ 'tipoVentanilla': req.body.tipoVentanilla },function(err, resVentanillas)	//Busca el modelo dentro del MVC
-	{
-		if (err) return next(err);
-		//console.log(cashiers);
-		res.render('loginCashier', {	//nombre de la vista
-			titulo: 'lista de Cajeros',
-			cashiers: cashiers
+router.post('/loginCashier', function(req, res)
+{
+	var time = new Date(),
+	    date = time.toISOString().slice(0,10);
+
+	customers.find({ 'tipoVentanilla': req.body.tipoVentanilla, 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			//console.log(customers);
+			res.render('listCustomer', {	//Hay un view que se llama Tienda
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
 		});
-	});
 
+    //console.log(fileCreated);
+
+	//res.redirect('/customers');
+	
 });

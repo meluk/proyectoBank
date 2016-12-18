@@ -12,6 +12,16 @@ h1{
 	font-size: 30px;
 	font-style: normal;
 }
+h2{
+	float: left;
+	font-size: 28px;
+	margin: 0
+}
+.idCustomer{
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
 .home{
 	background-color: #efefef;
 	padding-bottom: 300px
@@ -49,12 +59,27 @@ h1{
 	height: 20px;
 	margin: 0px
 }
+.contenedorForm h1 a{
+	color: #303F9F;
+}
+.guardar{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.contenedorForm {
+	width: 550px;
+}
 .item
 {
-	width: 250px;
-	height: 250px;
 	float: left;
 	text-align: center;
+	background-color: #C5CAE9;
+	border-radius: 4px;
+	margin: 20px;
+	padding: 15px 20px;
+}
+.f1{
+	float: left;
 }
 
 .myButton {
@@ -71,14 +96,14 @@ h1{
 	margin-left: 10px;
 }
 .myButton:hover {
-	background-color:#FF5722;
+	background-color:#fbb028;
 }
 .myButton:active {
 	position:relative;
 	top:1px;
 }
 .agregar label{
-	color: #ffffff;
+	color: #212121;
 	font-size: 16px;
 	margin-left: 25px;
 }

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    
+	div
+		- for(var i = 0; i < customers.length; ++i){
+
+			div.item
+				h2 #{customers[i]._id}
+				br
+				small Pr: #{customers[i].tipoVentanilla}
+				small Pr: #{customers[i].maxQuantity} 
+		-}

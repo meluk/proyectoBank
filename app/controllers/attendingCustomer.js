@@ -3,6 +3,9 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	customers = mongoose.model('customers');
 
+var timeAttending,
+    timefinish;
+
 module.exports = function(app)
 {
 	app.use('/', router);
@@ -10,15 +13,15 @@ module.exports = function(app)
 
 router.get('/takeFile', function(req, res)
 {
-	var time = new Date();
+	timeAttending = new Date();
+	console.log('a = ' +timeAttending);
+	console.log('a = ' +timeAttending.getTime());
 
-	customers.findByIdAndUpdate(req.query.id, {$set:{HoraAtecion : time, estado: "atediendo",}}, {new: true}, function(err, doc){
+	customers.findByIdAndUpdate(req.query.id, {$set:{HoraAtecion : timeAttending, estado: "atediendo",}}, {new: true}, function(err, doc){
 	    if(err){
 	        console.log(err);
 	    }
-
 	    console.log(doc);
-
 	    res.render('attendingCustomer', {	//vista
 			idProducto: req.query.id,
 			customer: doc
@@ -29,20 +32,20 @@ router.get('/takeFile', function(req, res)
 
 router.get('/finish', function(req, res)
 {
-	var time = new Date(),
-	    tiempoVentanilla;
+	    timefinish = new Date();
+	    console.log('b = ' +timefinish);
+	    console.log('b = ' +timefinish.getTime());
 
-	    console.log('newDate : '+ time);
-	    console.log('horas : '+ time.getTime());
+	    tiempoVentanilla =  timefinish - timeAttending;
 
-	customers.findByIdAndUpdate(req.query.id, {$set:{HoraFinal : time, estado: "finalizó",}}, {new: true}, function(err, doc){
+	    //console.log('tiempo = ' +tiempoVentanilla);
+
+	customers.findByIdAndUpdate(req.query.id, {$set:{HoraFinal : timefinish, estado: "finalizó", tiempoVentanilla : tiempoVentanilla}}, {new: true}, function(err, doc){
 	    if(err){
 	        console.log(err);
 	    }
-
-	    console.log(doc.HoraAtecion);
-	    console.log(doc.HoraFinal);
-	    tiempoVentanilla = doc.HoraAtecion - doc.HoraFinal;
+	     console.log(doc);
+	     tiempoVentanilla = tiempoVentanilla / 1000;
 	    console.log('tardo: ' +tiempoVentanilla)
 
 	});

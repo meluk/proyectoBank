@@ -6,10 +6,8 @@ block content
 		- for(var i = 0; i < customers.length; ++i){
 
 			div.item
-				h2 #{customers[i].cedula}
-				br
-				small Pr: #{customers[i].tipoVentanilla}
-				small Pr: #{customers[i].ficha} 
-				div.myButton
+				h2 #{customers[i].ficha}
+				p.idCustomer #{customers[i].cedula} 
+				div.myButton.f1
 					a(href="takeFile?id=#{customers[i]._id}") Tomar Ficha
 		-}
