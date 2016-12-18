@@ -81,7 +81,7 @@ router.get('/report', function(req, res)
 
 	   	for (var i = result.length - 1; i >= 0; i--) {
 	   		var newTime = returnTime(result[i].Quantity);
-	   		console.log(newTime);
+	  
 	   		var array= {
 	   			"_id" :  result[i]._id,
 	   			"Quantity" : newTime
@@ -116,7 +116,6 @@ router.get('/report2', function(req, res)
 	   ],
 	   function(err,result) {
 	   	if (err) return next(err);
-	   	console.log(result);
 
 	   	var ReportTimeWindow = new Array();
 

@@ -6,7 +6,7 @@ var config = {
   development: {    //aqui en development
     root: rootPath,
     app: {
-      name: 'Laboratorio2'
+      name: 'ProyectoBank'
     },
     port: process.env.PORT || 3000,
     db: 'mongodb://localhost/bancoApp'
@@ -15,19 +15,19 @@ var config = {
   test: {
     root: rootPath,
     app: {
-      name: 'Laboratorio2'
+      name: 'ProyectoBank'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/Laboratorio2-test'
+    db: 'mongodb://localhost/ProyectoBank-test'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'Laboratorio2'
+      name: 'ProyectoBank'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/Laboratorio2-production'
+    db: 'mongodb://localhost/ProyectoBank-production'
   }
 };
 

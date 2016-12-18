@@ -7,13 +7,16 @@ collection  customers:
 
 -----Ejemplo de los datos-----
 {
-    "cedula" : "345743",
-    "tipoVentanilla" : "Especial",
-    "ficha" : "D6",
-    "HoraInicio" : ISODate("2016-12-12T03:57:57.606Z"),
-    "HoraAtecion" : null,
-    "HoraFinal" : null,
-    "tiempoVentanilla" : null,
+    "_id" : ObjectId("584f93e585713620d8931314"),
+    "cedula" : "4e6747568",
+    "tipoVentanilla" : "cajas",
+    "estado" : "finalizó",
+    "ficha" : "C2",
+    "fecha" : "2016-12-13",
+    "HoraInicio" : ISODate("2016-12-13T06:23:33.425Z"),
+    "HoraAtecion" : ISODate("2016-12-17T17:53:09.807Z"),
+    "HoraFinal" : ISODate("2016-12-17T17:53:15.213Z"),
+    "tiempoVentanilla" : 5406,
     "__v" : 0
 }
 
@@ -25,14 +28,3 @@ collection  cashier:
     "contraseña" : "c123",
     "tipoVentanilla" : "cajas"
 }
-
-collection  fileList:
-
-
------Rutas-----
-customers/
-   muetra todas los clientes
-newFile/
-    crea un nuevo cliente con su ficha
-cashiers/
-    formulario para logerase

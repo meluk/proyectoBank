@@ -1,6 +1,6 @@
 body {
   font: 12px "Helvetica", "Arial", sans-serif;
-  background-color: #ffffff;
+  background-color: #efefef;
   margin: 0px
 }
 a {
@@ -28,12 +28,13 @@ h2{
 }
 .contenedor
 {
-	background-color: #613AB7;
+	background-color: #3F51B5;
 	margin: 0px;
 	padding: 10px 35px;
 }
 .home .row{
 	width: 50%;
+    margin-left: 25%;
 	margin-top:  60px;
 }
 .home a{
@@ -53,9 +54,12 @@ h2{
 	border-radius: 60%;
 	border-color: #fbb028;
 }
+.logoIndex{
+	margin-top: 35px;
+}
 .contenedor2
 {
-	background-color: #512DA8;
+	background-color: #303F9F;
 	height: 20px;
 	margin: 0px
 }
@@ -132,5 +136,22 @@ thead th{
 tbody th{
 	border-bottom: 1px solid #C5CAE9;
 	border-bottom-style:dotted;
-	padding: 10px
+	padding: 10px;
+	background-color: #ffffff;
+}
+.imprime{
+	background-color: #FFC107;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#757575;
+	font-family:Helvetica;
+	font-size:12px;
+	font-weight:bold;
+	padding:10px 15px;
+	text-decoration:none;
+	margin-left: 10px;
+}
+.sr-only{
+	margin: 10px 15px;
 }

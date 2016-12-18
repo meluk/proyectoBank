@@ -88,13 +88,14 @@ router.get('/seeTicket', function(req, res, next)
 	});
 });
 
+//El cliente toma la ficha
 router.get('/takeTicket', function(req, res)
 {
 	customers.find({'estado' : 'atediendo'},function(err, resCustomers)
 		{
 			if (err) return next(err);
 			console.log(resCustomers);
-			res.render('listCustomer', {	//Hay un view que se llama Tienda
+			res.render('attendingCustomer', {	//Hay un view que se llama Tienda
 				titulo: 'lista de customers',
 				customers: resCustomers
 			});

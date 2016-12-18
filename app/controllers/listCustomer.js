@@ -14,7 +14,7 @@ router.get('/customers', function(req, res, next)
 	{
 		if (err) return next(err);
 		//console.log(customers);
-		res.render('listCustomer', {	//Hay un view que se llama Tienda
+		res.render('listCustomer', {	//Vista
 			titulo: 'lista de customers',
 			customers: customers
 		});

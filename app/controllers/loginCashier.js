@@ -4,6 +4,9 @@ var express = require('express'),
 	cashiers = mongoose.model('cashiers'),
 	customers = mongoose.model('customers');	//Invoca el modelo definido en el MVC Models
 
+var time = new Date(),
+	date = time.toISOString().slice(0,10);
+
 module.exports = function(app) {
 	app.use('/', router);
 };
@@ -15,22 +18,85 @@ router.get('/cashiers', function(req, res)
 
 router.post('/loginCashier', function(req, res)
 {
-	var time = new Date(),
-	    date = time.toISOString().slice(0,10);
 
 	customers.find({ 'tipoVentanilla': req.body.tipoVentanilla, 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
 		{
 			if (err) return next(err);
-			//console.log(customers);
-			res.render('listCustomer', {	//Hay un view que se llama Tienda
+			res.render('listCustomer', {	
 				titulo: 'lista de customers',
 				customers: resVentanillas
 			});
 			
 		});
-
-    //console.log(fileCreated);
-
-	//res.redirect('/customers');
 	
+});
+
+router.get('/cajas', function(req, res)
+{
+
+	customers.find({ 'tipoVentanilla': 'cajas', 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			res.render('listCustomer', {	
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
+		});
+});
+
+router.get('/plataforma', function(req, res)
+{
+
+	customers.find({ 'tipoVentanilla': 'plataforma', 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			res.render('listCustomer', {	
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
+		});
+});
+
+router.get('/credito', function(req, res)
+{
+
+	customers.find({ 'tipoVentanilla': 'credito', 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			res.render('listCustomer', {	
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
+		});
+});
+
+router.get('/marchamo', function(req, res)
+{
+
+	customers.find({ 'tipoVentanilla': 'marchamo', 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			res.render('listCustomer', {	
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
+		});
+});
+
+router.get('/preferenciales', function(req, res)
+{
+
+	customers.find({ 'tipoVentanilla': 'preferenciales', 'fecha' : date, estado : 'esperando'},function(err, resVentanillas)
+		{
+			if (err) return next(err);
+			res.render('listCustomer', {	
+				titulo: 'lista de customers',
+				customers: resVentanillas
+			});
+			
+		});
 });

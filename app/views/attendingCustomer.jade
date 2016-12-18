@@ -1,8 +1,12 @@
 extends layout
 
-block content 
+block content
     
 	div
-		h2 #{customer.ficha}
-		div.myButton
-					a(href="finish?id=#{customer._id}") Tomar Otra Ficha
+		- for(var i = 0; i < customers.length; ++i){
+
+			div.item
+				h2 #{customers[i].tipoVentanilla}
+				br
+				h2 Atendiendo: #{customers[i].ficha}
+		-}
