@@ -121,3 +121,16 @@ h2{
 .text-center{
 	text-align: center;
 }
+thead{
+	background-color:#303F9F;
+	color: #ffffff;
+	font-size: 16px;
+}
+thead th{
+	padding: 5px 80px;
+}
+tbody th{
+	border-bottom: 1px solid #C5CAE9;
+	border-bottom-style:dotted;
+	padding: 10px
+}

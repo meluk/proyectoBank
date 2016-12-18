@@ -1,13 +1,18 @@
 extends layout
 
 block content
-    
-	div
-		- for(var i = 0; i < customers.length; ++i){
+    h1 #{titulo}
+    div
+    table.table
+          thead
+             tr
+               th #{tituloDato}
 
-			div.item
-				h2 #{customers[i]._id}
-				br
-				small Pr: #{customers[i].tipoVentanilla}
-				small Pr: #{customers[i].maxQuantity} 
-		-}
+               th #{numDato}
+           tbody
+              - for(var i = 0; i < customers.length; ++i){
+              tr
+                th #{customers[i]._id}
+                th #{customers[i].Quantity}
+              -}
+    input(type='button', value='Imprimir', onclick='window.print()')
