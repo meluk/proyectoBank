@@ -15,15 +15,17 @@ module.exports = function(app)
 router.get('/takeFile', function(req, res)
 {
 	timeAttending = new Date();
+	//console.log('a = ' +timeAttending);
+	//console.log('a = ' +timeAttending.getTime());
 
 	customers.findByIdAndUpdate(req.query.id, {$set:{HoraAtecion : timeAttending, estado: "atediendo",}}, {new: true}, function(err, doc){
 	    if(err){
 	        console.log(err);
 	    }
-
-	    res.render('attendingCustomer', {	//vista
+	    console.log('array'+ doc.ficha);
+	    res.render('cahierAttending', {	//vista
 			idProducto: req.query.id,
-			customer: doc
+			customers: doc
 		});
 	});
 

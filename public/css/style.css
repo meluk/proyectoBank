@@ -1,6 +1,5 @@
 body {
   font: 12px "Helvetica", "Arial", sans-serif;
-  background-color: #efefef;
   margin: 0px
 }
 a {
@@ -17,6 +16,11 @@ h2{
 	font-size: 28px;
 	margin: 0
 }
+.tomar{
+	color: #212121;
+	background-color: red
+}
+
 .idCustomer{
 	float: left;
 	margin-left: 20px;
